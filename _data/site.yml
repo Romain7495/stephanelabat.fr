@@ -13,15 +13,14 @@ area:
   - Grasse
   - Cannes
   - Antibes
-tagline_start: Du ferraillage au carrelage,
-tagline_end: je suis là du début à la fin.
+tagline_start: Je construis et je rénove chez vous,
+tagline_end: de la fondation à la finition.
 hero:
-  folder: chantier-01
-  file: chantier-01-21
+  folder: chantier-03
+  file: chantier-03-22
   width: 1600
   height: 1200
-  alt: Ferraillage d'une terrasse sur dalle avec vue sur la mer, avant coulage du béton
-  caption: Terrasse sur dalle vue mer — ferraillage avant coulage
+  alt: Piscine carrelée et sa plage, entourées de cyprès
 host:
   name: GitHub Inc.
   address: 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA
