@@ -3,9 +3,10 @@ title: Accueil
 ---
 {%- assign site_info = site.data.site -%}
 {%- assign hero_base = '/assets/chantiers/' | append: site_info.hero.folder | append: '/' | append: site_info.hero.file -%}
-<div class="hero">
+<figure class="hero">
   <img class="hero__image" src="{{ hero_base | append: '.webp' | relative_url }}" srcset="{{ hero_base | append: '-thumb.webp' | relative_url }} 600w, {{ hero_base | append: '-medium.webp' | relative_url }} 800w, {{ hero_base | append: '.webp' | relative_url }} 1600w" sizes="100vw" width="{{ site_info.hero.width }}" height="{{ site_info.hero.height }}" alt="{{ site_info.hero.alt }}" fetchpriority="high">
-</div>
+  <figcaption class="container caption">{{ site_info.hero.caption }}</figcaption>
+</figure>
 
 <section class="container intro">
   <h1 class="tagline">{{ site_info.tagline_start }} <em>{{ site_info.tagline_end }}</em></h1>
