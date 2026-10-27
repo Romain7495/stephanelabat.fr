@@ -1,0 +1,10 @@
+_site/
+.jekyll-cache/
+.sass-cache/
+.venv/
+__pycache__/
+.pytest_cache/
+vendor/
+Gemfile.lock
+.DS_Store
+.bundle/

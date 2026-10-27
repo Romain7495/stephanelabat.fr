@@ -1,0 +1,32 @@
+---
+title: Mentions légales
+description: Mentions légales du site stephanelabat.fr.
+permalink: /mentions-legales/
+---
+{%- assign site_info = site.data.site -%}
+<section class="container section legal">
+  <h1 class="page-title">Mentions légales</h1>
+
+  <h2 class="section-title">Éditeur du site</h2>
+  <p>
+    {{ site_info.legal_name }}, {{ site_info.legal_form }} au capital de {{ site_info.capital }}<br>
+    Siège social : {{ site_info.head_office }}<br>
+    SIRET : {{ site_info.siret }}<br>
+    Téléphone : <a href="tel:{{ site_info.phone_e164 }}">{{ site_info.phone_display }}</a><br>
+    E-mail : <a href="mailto:{{ site_info.email }}">{{ site_info.email }}</a>
+  </p>
+  <p>Directeur de la publication : {{ site_info.publication_director }}</p>
+
+  <h2 class="section-title">Hébergeur</h2>
+  <p>
+    {{ site_info.host.name }}<br>
+    {{ site_info.host.address }}<br>
+    <a href="{{ site_info.host.website }}">{{ site_info.host.website }}</a>
+  </p>
+
+  <h2 class="section-title">Données personnelles et cookies</h2>
+  <p>Ce site ne dépose aucun cookie, ne contient aucun outil de mesure d'audience et ne collecte aucune donnée par formulaire. L'hébergeur peut enregistrer l'adresse IP des visiteurs dans ses journaux techniques, pour la sécurité du service.</p>
+
+  <h2 class="section-title">Photos et contenus</h2>
+  <p>Les photos sont celles des chantiers de l'entreprise. Les textes, photos et logos ne peuvent être réutilisés sans autorisation.</p>
+</section>

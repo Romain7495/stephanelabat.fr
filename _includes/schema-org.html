@@ -1,0 +1,15 @@
+{%- assign site_info = site.data.site -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "@id": "{{ '/' | absolute_url }}#entreprise",
+  "name": {{ site_info.name | append: " – " | append: site_info.trade | jsonify }},
+  "url": "{{ '/' | absolute_url }}",
+  "telephone": "{{ site_info.phone_e164 }}",
+  "email": "{{ site_info.email }}",
+  "logo": "{{ '/assets/logo/logo.svg' | absolute_url }}",
+  "image": "{{ '/assets/chantiers/' | append: site_info.hero.folder | append: '/' | append: site_info.hero.file | append: '.webp' | absolute_url }}",
+  "areaServed": [{% for city in site_info.area %}{ "@type": "City", "name": {{ city | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}]
+}
+</script>

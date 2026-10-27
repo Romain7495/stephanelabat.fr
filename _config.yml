@@ -1,0 +1,36 @@
+title: Stéphane Labat – Maçonnerie · Rénovation
+description: Maçon à Grasse, Cannes et Antibes. Rénovation, construction et maçonnerie, clôtures et murets, terrasses et plages de piscine. Devis gratuit, je me déplace.
+url: https://stephanelabat.fr
+lang: fr
+locale: fr_FR
+timezone: Europe/Paris
+
+collections:
+  chantiers:
+    output: true
+    permalink: /realisations/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: chantiers
+    values:
+      layout: chantier
+      scripts:
+        - lightbox.js
+        - before-after.js
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - scripts
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .venv

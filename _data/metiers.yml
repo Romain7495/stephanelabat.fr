@@ -1,0 +1,28 @@
+- key: renovation
+  number: "01"
+  title: Rénovation
+  lines:
+    - Reprise de murs, enduits, façades
+    - Ouverture de murs, création de baies
+    - Remise en état après sinistre
+- key: construction
+  number: "02"
+  title: Construction & maçonnerie
+  lines:
+    - Extensions, garages, annexes
+    - Fondations, dalles, chapes
+    - Murs en parpaing ou en pierre
+- key: clotures
+  number: "03"
+  title: Clôtures & murets
+  lines:
+    - Murets enduits ou en pierre
+    - Piliers et seuils de portail
+    - Murs de soutènement
+- key: terrasses
+  number: "04"
+  title: Terrasses
+  lines:
+    - Dalle béton, carrelage extérieur
+    - Escaliers, marches, bordures
+    - Plages de piscine

@@ -1,0 +1,17 @@
+{%- assign site_info = site.data.site -%}
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">
+      <picture>
+        <source media="(min-width: 48em)" srcset="{{ '/assets/logo/logo.svg' | relative_url }}" width="307" height="120">
+        <img src="{{ '/assets/logo/monogramme.svg' | relative_url }}" width="108" height="108" alt="{{ site_info.name }}, {{ site_info.trade }} – accueil">
+      </picture>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="{{ '/realisations/' | relative_url }}"{% if page.url contains '/realisations/' %} aria-current="page"{% endif %}>Réalisations</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
+      <a class="button site-nav__phone" href="tel:{{ site_info.phone_e164 }}">{{ site_info.phone_display }}</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,39 @@
+{%- assign site_info = site.data.site -%}
+{%- if page.url == "/" -%}
+  {%- assign full_title = site.title -%}
+{%- else -%}
+  {%- capture full_title -%}{{ page.title }}{% if page.commune and page.commune != "" %} à {{ page.commune }}{% endif %} – {{ site_info.name }}, maçon{%- endcapture -%}
+{%- endif -%}
+{%- if page.description and page.description != "" -%}
+  {%- assign meta_description = page.description -%}
+{%- elsif page.collection == "chantiers" -%}
+  {%- capture meta_description -%}{{ page.title }}{% if page.commune and page.commune != "" %} à {{ page.commune }}{% endif %} : chantier réalisé par {{ site_info.name }}, maçon à {{ site_info.area | join: ", " }}.{%- endcapture -%}
+{%- else -%}
+  {%- assign meta_description = site.description -%}
+{%- endif -%}
+{%- if page.collection == "chantiers" -%}
+  {%- assign og_image = "/assets/chantiers/" | append: page.folder | append: "/" | append: page.cover | append: ".webp" -%}
+{%- else -%}
+  {%- assign og_image = "/assets/chantiers/" | append: site_info.hero.folder | append: "/" | append: site_info.hero.file | append: ".webp" -%}
+{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ full_title | strip_newlines }}</title>
+<meta name="description" content="{{ meta_description | strip_newlines | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ full_title | strip_newlines | escape }}">
+<meta property="og:description" content="{{ meta_description | strip_newlines | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ og_image | absolute_url }}">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="{{ '/assets/logo/monogramme.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/barlow-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/barlow-condensed-600.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/barlow-condensed-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<style>
+{% include main.css %}
+</style>
+{%- include schema-org.html %}

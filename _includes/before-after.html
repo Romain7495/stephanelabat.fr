@@ -1,0 +1,20 @@
+{%- assign before = page.photos | where: "file", page.before | first -%}
+{%- assign after = page.photos | where: "file", page.after | first -%}
+{%- assign base = '/assets/chantiers/' | append: page.folder | append: '/' -%}
+<figure class="before-after" data-before-after>
+  <div class="before-after__frame">
+    <div class="before-after__side">
+      <img src="{{ base | append: before.file | append: '-medium.webp' | relative_url }}" srcset="{{ base | append: before.file | append: '-thumb.webp' | relative_url }} 600w, {{ base | append: before.file | append: '-medium.webp' | relative_url }} 800w, {{ base | append: before.file | append: '.webp' | relative_url }} 1600w" sizes="(min-width: 48em) 48rem, 100vw" width="{{ before.width }}" height="{{ before.height }}" alt="Avant : {{ before.alt | escape }}" fetchpriority="high">
+      <span class="tag tag--start">Avant</span>
+    </div>
+    <div class="before-after__side before-after__after">
+      <img src="{{ base | append: after.file | append: '-medium.webp' | relative_url }}" srcset="{{ base | append: after.file | append: '-thumb.webp' | relative_url }} 600w, {{ base | append: after.file | append: '-medium.webp' | relative_url }} 800w, {{ base | append: after.file | append: '.webp' | relative_url }} 1600w" sizes="(min-width: 48em) 48rem, 100vw" width="{{ after.width }}" height="{{ after.height }}" alt="Après : {{ after.alt | escape }}" fetchpriority="low">
+      <span class="tag tag--end">Après</span>
+    </div>
+  </div>
+  <label class="before-after__control" hidden>
+    <span class="visually-hidden">Comparer avant et après</span>
+    <input type="range" min="0" max="100" value="50">
+  </label>
+  <figcaption class="caption">Avant / après</figcaption>
+</figure>

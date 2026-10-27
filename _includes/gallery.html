@@ -1,0 +1,19 @@
+{%- assign base = '/assets/chantiers/' | append: page.folder | append: '/' -%}
+<ul class="gallery" data-gallery>
+  {%- for photo in page.photos %}
+  <li>
+    <a href="{{ base | append: photo.file | append: '.webp' | relative_url }}" data-medium="{{ base | append: photo.file | append: '-medium.webp' | relative_url }}" data-width="{{ photo.width }}" data-height="{{ photo.height }}">
+      <img src="{{ base | append: photo.file | append: '-thumb.webp' | relative_url }}" width="{{ photo.thumb_width }}" height="{{ photo.thumb_height }}" alt="{{ photo.alt | escape }}" loading="lazy" decoding="async">
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+<dialog class="lightbox" aria-label="Photo agrandie">
+  <figure class="lightbox__figure">
+    <img class="lightbox__image" src="" alt="">
+    <figcaption class="lightbox__caption" aria-live="polite"></figcaption>
+  </figure>
+  <button class="lightbox__button lightbox__previous" type="button" aria-label="Photo précédente">‹</button>
+  <button class="lightbox__button lightbox__next" type="button" aria-label="Photo suivante">›</button>
+  <button class="lightbox__button lightbox__close" type="button" aria-label="Fermer">×</button>
+</dialog>

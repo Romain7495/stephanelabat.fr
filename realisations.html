@@ -1,0 +1,36 @@
+---
+title: Réalisations
+description: Chantiers de maçonnerie et de rénovation à Grasse, Cannes et Antibes, en photos. Rénovation, construction, clôtures et murets, terrasses et plages de piscine.
+permalink: /realisations/
+scripts:
+  - filter.js
+---
+{%- assign chantiers = site.chantiers | sort: "number" | reverse -%}
+<section class="container section">
+  <h1 class="page-title">Réalisations</h1>
+  {%- for metier in site.data.metiers %}
+  <span class="filter-target" id="{{ metier.key }}"></span>
+  {%- endfor %}
+  <nav class="filters" aria-label="Filtrer par métier">
+    <a class="filter filter--all" href="#realisations">Tous</a>
+    {%- for metier in site.data.metiers %}
+    <a class="filter" href="#{{ metier.key }}">{{ metier.title }}</a>
+    {%- endfor %}
+  </nav>
+  {%- for metier in site.data.metiers %}
+  {%- assign matching = chantiers | where: "type", metier.key %}
+  {%- if matching.size == 0 %}
+  <p class="filters__empty" data-empty-for="{{ metier.key }}">Pas encore de chantier en ligne pour ce métier.</p>
+  {%- endif %}
+  {%- endfor %}
+  <ul class="cards" id="realisations">
+    {%- for chantier in chantiers %}
+    {%- if forloop.index <= 3 %}
+    {% include chantier-card.html chantier=chantier heading="h2" eager=true %}
+    {%- else %}
+    {% include chantier-card.html chantier=chantier heading="h2" %}
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</section>
+{% include quote-band.html %}

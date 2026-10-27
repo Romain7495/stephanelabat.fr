@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+{%- include head.html %}
+</head>
+<body>
+{%- include header.html %}
+<main id="contenu">
+{{ content }}
+</main>
+{%- include footer.html %}
+{%- for script in page.scripts %}
+<script src="{{ '/assets/js/' | append: script | relative_url }}" defer></script>
+{%- endfor %}
+</body>
+</html>

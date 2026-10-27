@@ -1,0 +1,11 @@
+{%- assign job = include.chantier -%}
+{%- assign cover = job.photos | where: "file", job.cover | first -%}
+{%- assign metier = site.data.metiers | where: "key", job.type | first -%}
+<li class="card" data-type="{{ job.type }}">
+  <a class="card__link" href="{{ job.url | relative_url }}">
+    <img class="card__image" src="{{ '/assets/chantiers/' | append: job.folder | append: '/' | append: cover.file | append: '-thumb.webp' | relative_url }}" width="{{ cover.thumb_width }}" height="{{ cover.thumb_height }}" alt="{{ cover.alt | escape }}"{% unless include.eager %} loading="lazy"{% endunless %} decoding="async">
+    {%- assign heading = include.heading | default: "h3" %}
+    <{{ heading }} class="card__title">{{ job.title }}</{{ heading }}>
+    <p class="card__meta">{% if job.commune and job.commune != "" %}{{ job.commune }} · {% endif %}{{ metier.title }}</p>
+  </a>
+</li>

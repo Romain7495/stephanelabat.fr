@@ -1,0 +1,28 @@
+name: Stéphane Labat
+trade: Maçonnerie · Rénovation
+legal_name: Stéphane LABAT
+legal_form: SASU
+siret: 423 782 366 00060
+capital: "[à compléter]"
+head_office: "[à compléter]"
+publication_director: Stéphane Labat
+phone_display: 06 50 30 33 43
+phone_e164: "+33650303343"
+email: contact@stephanelabat.fr
+area:
+  - Grasse
+  - Cannes
+  - Antibes
+tagline_start: Du ferraillage au carrelage,
+tagline_end: je suis là du début à la fin.
+hero:
+  folder: chantier-01
+  file: chantier-01-21
+  width: 1600
+  height: 1200
+  alt: Ferraillage d'une terrasse sur dalle avec vue sur la mer, avant coulage du béton
+  caption: Terrasse sur dalle vue mer — ferraillage avant coulage
+host:
+  name: GitHub Inc.
+  address: 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA
+  website: https://github.com

@@ -1,0 +1,9 @@
+{%- assign site_info = site.data.site -%}
+<div class="contact-block">
+  <img class="contact-block__mark" src="{{ '/assets/logo/monogramme.svg' | relative_url }}" width="108" height="108" alt="" loading="lazy">
+  <div class="contact-block__details">
+    <a class="big-phone" href="tel:{{ site_info.phone_e164 }}">{{ site_info.phone_display }}</a>
+    <a class="contact-block__mail" href="mailto:{{ site_info.email }}">{{ site_info.email }}</a>
+    <p class="caps">{{ site_info.area | join: " · " }} et alentours</p>
+  </div>
+</div>
