@@ -9,8 +9,8 @@ permalink: /mentions-legales/
 
   <h2 class="section-title">Éditeur du site</h2>
   <p>
-    {{ site_info.legal_name }}, {{ site_info.legal_form }} au capital de {{ site_info.capital }}<br>
-    Siège social : {{ site_info.head_office }}<br>
+    {{ site_info.legal_name }}, {{ site_info.legal_form_long }} ({{ site_info.legal_form }})<br>
+    Adresse : {{ site_info.business_address }}<br>
     SIRET : {{ site_info.siret }}<br>
     Téléphone : <a href="tel:{{ site_info.phone_e164 }}">{{ site_info.phone_display }}</a><br>
     E-mail : <a href="mailto:{{ site_info.email }}">{{ site_info.email }}</a>

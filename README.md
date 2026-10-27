@@ -72,7 +72,7 @@ puis <http://localhost:4000>.
 
 ## Informations légales
 
-Raison sociale, forme, SIRET, siège et capital sont dans `_data/site.yml`, et la
+Nom, forme (EI), SIRET et adresse de l'entreprise sont dans `_data/site.yml`, et la
 page `mentions-legales.html` les reprend.
 
 ## DNS
