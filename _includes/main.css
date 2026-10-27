@@ -673,6 +673,22 @@ ul {
   padding-bottom: 1.25rem;
 }
 
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.legal__list {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style: square;
+}
+
+.legal__list li + li {
+  margin-top: 0.75rem;
+}
+
 .site-footer a {
   text-decoration: none;
   border-bottom: var(--rule);
