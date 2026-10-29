@@ -7,6 +7,11 @@ description: ''
 cover: chantier-01-23
 before: chantier-01-20
 after: chantier-01-14
+video:
+  file: chantier-01-video
+  width: 1024
+  height: 576
+  caption: La terrasse finie, de nuit
 folder: chantier-01
 photos:
 - file: chantier-01-01

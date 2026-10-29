@@ -12,6 +12,9 @@ layout: default
   {%- if page.before and page.before != "" and page.after and page.after != "" %}
   {% include before-after.html %}
   {%- endif %}
+  {%- if page.video %}
+  {% include job-video.html %}
+  {%- endif %}
   <h2 class="section-title">Photos du chantier</h2>
   {% include gallery.html %}
   <p><a class="text-link" href="{{ '/realisations/' | relative_url }}">Toutes les réalisations</a></p>

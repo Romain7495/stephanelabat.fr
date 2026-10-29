@@ -564,6 +564,19 @@ ul {
   accent-color: var(--terracotta);
 }
 
+.job-video {
+  max-width: 48rem;
+  margin-bottom: var(--section-space);
+}
+
+.job-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--charcoal);
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

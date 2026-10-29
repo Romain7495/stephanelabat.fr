@@ -1,0 +1,8 @@
+{%- assign base = '/assets/chantiers/' | append: page.folder | append: '/' | append: page.video.file -%}
+<figure class="job-video">
+  <video controls muted playsinline preload="none" poster="{{ base | append: '-poster.webp' | relative_url }}" width="{{ page.video.width }}" height="{{ page.video.height }}" aria-label="{{ page.video.caption | escape }}, vidéo sans son">
+    <source src="{{ base | append: '.mp4' | relative_url }}" type="video/mp4">
+    <a href="{{ base | append: '.mp4' | relative_url }}">Voir la vidéo</a>
+  </video>
+  <figcaption class="caption">{{ page.video.caption }}</figcaption>
+</figure>

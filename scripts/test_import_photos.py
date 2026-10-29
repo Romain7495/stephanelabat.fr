@@ -162,3 +162,21 @@ def test_export_dates_equal_to_today_are_not_used(workspace):
     front, _ = importer.read_markdown(repo / "_chantiers" / "chantier-03-muret-en-pierre.md")
     assert "date" not in front
     assert front["number"] == 3
+
+
+def test_rerun_keeps_extra_assets_and_front_matter(workspace):
+    source_root, _, repo = workspace
+    run_import(source_root, repo)
+    video = output_dir(repo) / "chantier-03-video.mp4"
+    poster = output_dir(repo) / "chantier-03-video-poster.webp"
+    video.write_bytes(b"video")
+    Image.new("RGB", (10, 10)).save(poster, "WEBP")
+    markdown = repo / "_chantiers" / "chantier-03-muret-en-pierre.md"
+    front, body = importer.read_markdown(markdown)
+    front["video"] = {"file": "chantier-03-video", "caption": "Le muret fini"}
+    importer.write_markdown(markdown, front, body)
+
+    run_import(source_root, repo)
+
+    assert video.exists() and poster.exists()
+    assert importer.read_markdown(markdown)[0]["video"]["caption"] == "Le muret fini"
